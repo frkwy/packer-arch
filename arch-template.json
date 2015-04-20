@@ -24,6 +24,7 @@
             "hard_drive_interface": "sata",
             "ssh_username": "root",
             "ssh_password": "vagrant",
+            "ssh_wait_timeout": "120m",
             "shutdown_command": "systemctl start poweroff.timer"
         },
         {

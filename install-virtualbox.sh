@@ -30,6 +30,20 @@ echo '==> creating /root filesystem (ext4)'
 echo "==> mounting ${ROOT_PARTITION} to ${TARGET_DIR}"
 /usr/bin/mount -o noatime,errors=remount-ro ${ROOT_PARTITION} ${TARGET_DIR}
 
+
+echo "==> settings mirror list to jp"
+echo "##
+## Arch Linux repository mirrorlist
+## Generated on 2015-04-20
+##
+
+## Japan
+Server = http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/\$repo/os/\$arch
+Server = http://srv2.ftp.ne.jp/Linux/packages/archlinux/\$repo/os/\$arch
+" > /etc/pacman.d/mirrorlist
+
+/usr/bin/pacman -Syy
+
 echo '==> bootstrapping the base installation'
 /usr/bin/pacstrap ${TARGET_DIR} base base-devel
 /usr/bin/arch-chroot ${TARGET_DIR} pacman -S --noconfirm gptfdisk openssh syslinux
