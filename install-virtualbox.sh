@@ -3,7 +3,7 @@
 DISK='/dev/sda'
 FQDN='vagrant-arch.vagrantup.com'
 KEYMAP='us'
-LANGUAGE='Ja_JP.utf8'
+LANGUAGE='ja_JP.UTF-8'
 PASSWORD=$(/usr/bin/openssl passwd -crypt 'vagrant')
 TIMEZONE='Asia/Tokyo'
 
