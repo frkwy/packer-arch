@@ -1,7 +1,7 @@
 {
     "variables": {
-        "iso_url": "https://mirrors.kernel.org/archlinux/iso/2015.08.01/archlinux-2015.08.01-dual.iso",
-        "iso_checksum": "e98320cd5f0c346fff4140af0b5ffadd59849168",
+        "iso_url": "http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/iso/2015.10.01/archlinux-2015.10.01-dual.iso",
+        "iso_checksum": "6d95a2a35e29b23d6abd30011c6ab8220250efb6",
         "iso_checksum_type": "sha1"
     },
     "builders": [
@@ -22,10 +22,10 @@
             ],
             "disk_size": 20480,
             "hard_drive_interface": "sata",
-            "ssh_username": "root",
+            "ssh_username": "vagrant",
             "ssh_password": "vagrant",
             "ssh_wait_timeout": "120m",
-            "shutdown_command": "systemctl start poweroff.timer"
+            "shutdown_command": "sudo systemctl start poweroff.timer"
         },
         {
             "type": "vmware-iso",
@@ -41,9 +41,15 @@
                 "/usr/bin/bash ./install-vmware.sh<enter>"
             ],
             "disk_size": 20480,
-            "ssh_username": "root",
+            "ssh_username": "vagrant",
             "ssh_password": "vagrant",
-            "shutdown_command": "systemctl start poweroff.timer"
+            "shutdown_command": "sudo systemctl start poweroff.timer"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "script.sh"
         }
     ],
     "post-processors": [
