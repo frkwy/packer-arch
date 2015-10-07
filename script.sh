@@ -7,4 +7,5 @@ sudo pacman -Syy --noconfirm git
 sudo pacman -Syy --noconfirm tree
 sudo pacman -Syy --noconfirm xsel
 
-#git clone https://github.com/frkwy/dotfiles.git
+git clone https://github.com/frkwy/dotfiles.git
+sh dotfiles/setup.sh
