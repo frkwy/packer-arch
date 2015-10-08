@@ -30,6 +30,7 @@ echo '==> creating /root filesystem (ext4)'
 echo "==> mounting ${ROOT_PARTITION} to ${TARGET_DIR}"
 /usr/bin/mount -o noatime,errors=remount-ro ${ROOT_PARTITION} ${TARGET_DIR}
 
+echo "LOCALE=ja_JP.UTF-8" > /etc/rc.conf
 
 echo "==> settings mirror list to jp"
 echo "##
