@@ -1,7 +1,7 @@
 {
     "variables": {
-        "iso_url": "http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/iso/2015.10.01/archlinux-2015.10.01-dual.iso",
-        "iso_checksum": "6d95a2a35e29b23d6abd30011c6ab8220250efb6",
+        "iso_url": "http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/iso/2016.03.01/archlinux-2016.03.01-dual.iso",
+        "iso_checksum": "992f046c3fb5afecaf8734126f2a095f437ca9b8",
         "iso_checksum_type": "sha1"
     },
     "builders": [
@@ -24,7 +24,7 @@
             "hard_drive_interface": "sata",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
-            "ssh_wait_timeout": "120m",
+            "ssh_wait_timeout": "30m",
             "shutdown_command": "sudo systemctl start poweroff.timer"
         },
         {
